@@ -24,6 +24,7 @@ function draw() {
 	if (frameCount < gifLength) {
 		capturer.capture(canvas);
 	} else if (frameCount === gifLength) {
+		console.log('done');
 		capturer.stop();
 		capturer.save();
 	}
