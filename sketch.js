@@ -13,19 +13,20 @@ function setup() {
 	canvas = p5Canvas.canvas;
 	imageMode(CENTER);
 	frameRate(2);
-// 	capturer.start();
+	capturer.start();
 }
 
 function draw() {
+	console.log(frameCount);
 	if (bool) { image(img1, width/2, height/2); }
 	else { image(img2, width/2, height/2); }
 	bool = !bool;
 	
-// 	if (frameCount < gifLength) {
-// 		capturer.capture(canvas);
-// 	} else if (frameCount === gifLength) {
-// 		console.log('done');
-// 		capturer.stop();
-// 		capturer.save();
-// 	}
+	if (frameCount < gifLength) {
+		capturer.capture(canvas);
+	} else if (frameCount === gifLength) {
+		console.log('done');
+		capturer.stop();
+		capturer.save();
+	}
 }
