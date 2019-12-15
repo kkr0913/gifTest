@@ -6,6 +6,7 @@ var bool = true;
 function preload() {
 	img1 = loadImage('title1.png');
 	img2 = loadImage('title2.png');
+	img3 = loadImage('title3.png');
 }
 
 function setup() {
@@ -26,7 +27,7 @@ function draw() {
 		capturer.save();
 	}
 	
-	if (bool) { image(img1, width/2, height/2); }
+	if (bool) { image(img3, width/2, height/2); }
 	else { image(img2, width/2, height/2); }
 	bool = !bool;
 }
