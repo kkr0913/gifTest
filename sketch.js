@@ -14,6 +14,7 @@ function setup() {
 	imageMode(CENTER);
 	frameRate(2);
 	capturer.start();
+	console.log('x');
 }
 
 function draw() {
