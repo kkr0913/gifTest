@@ -13,21 +13,20 @@ function setup() {
 	canvas = p5Canvas.canvas;
 	imageMode(CENTER);
 	frameRate(2);
-	capturer.start();
-	console.log('x');
 }
 
 function draw() {
 	console.log(frameCount);
-	if (bool) { image(img1, width/2, height/2); }
-	else { image(img2, width/2, height/2); }
-	bool = !bool;
-	
-	if (frameCount < gifLength) {
+	if (frameCount === 4) { capturer.start(); }
+	if (frameCount < 4+gifLength) {
 		capturer.capture(canvas);
-	} else if (frameCount === gifLength) {
+	} else if (frameCount === 4+gifLength) {
 		console.log('done');
 		capturer.stop();
 		capturer.save();
 	}
+	
+	if (bool) { image(img1, width/2, height/2); }
+	else { image(img2, width/2, height/2); }
+	bool = !bool;
 }
